@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 50 20% 97%;
+    --foreground: 0 0% 18%;
+
+    --card: 50 11% 94%;
+    --card-foreground: 0 0% 18%;
+
+    --popover: 50 20% 97%;
+    --popover-foreground: 0 0% 18%;
+
+    --primary: 30 14% 81%;
+    --primary-foreground: 0 0% 18%;
+
+    --secondary: 50 11% 94%;
+    --secondary-foreground: 0 0% 18%;
+
+    --muted: 50 11% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 30 14% 81%;
+    --accent-foreground: 0 0% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 14% 85%;
+    --input: 30 14% 85%;
+    --ring: 30 14% 70%;
+
+    --radius: 0.5rem;
+
+    --font-heading: 'DM Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background font-medium rounded-md transition-all duration-300 hover:bg-foreground/90 hover:scale-[1.02];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-card text-foreground font-medium rounded-md transition-all duration-300 hover:bg-accent;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border border-foreground text-foreground font-medium rounded-md transition-all duration-300 hover:bg-foreground hover:text-background;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-muted-foreground text-lg max-w-2xl;
+  }
+
+  .product-card {
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .category-card {
+    @apply flex flex-col items-center gap-3 p-6 bg-card rounded-xl transition-all duration-300 hover:shadow-md hover:-translate-y-1 cursor-pointer;
+  }
+
+  .nav-link {
+    @apply text-foreground/80 font-medium transition-colors duration-200 hover:text-foreground relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
