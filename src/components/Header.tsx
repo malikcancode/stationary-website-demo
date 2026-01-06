@@ -40,7 +40,7 @@ const Header = () => {
             href="#"
             className="font-heading text-2xl font-bold tracking-tight"
           >
-            Station<span className="text-muted-foreground">ex</span>
+            Camel <span className="text-muted-foreground">Stationery</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -39,7 +39,7 @@ const Footer = () => {
               href="#"
               className="font-heading text-2xl font-bold tracking-tight"
             >
-              Station<span className="text-muted-foreground">ex</span>
+              Camel <span className="text-muted-foreground">Stationery</span>
             </a>
             <p className="text-muted-foreground leading-relaxed">
               A portfolio showcasing exceptional stationary design and

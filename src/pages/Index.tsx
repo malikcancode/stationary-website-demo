@@ -23,12 +23,12 @@ const Index = () => {
           <Hero />
           <Categories />
           <Products />
-          <ScrollVelocity
+          {/* <ScrollVelocity
             texts={["Premium Stationary", "Innovative Design"]}
             velocity={50}
             className="text-muted-foreground"
             parallaxClassName="py-4 bg-card/30"
-          />
+          /> */}
           <FeaturedProduct />
           <Instagram />
         </main>
