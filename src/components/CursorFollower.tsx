@@ -3,6 +3,19 @@ import { useEffect, useState } from "react";
 const CursorFollower = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if screen is mobile (under 640px - sm breakpoint)
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     let animationFrameId: number;
@@ -48,7 +61,8 @@ const CursorFollower = () => {
     };
   }, [isVisible]);
 
-  if (!isVisible) return null;
+  // Don't render on mobile devices
+  if (isMobile || !isVisible) return null;
 
   return (
     <div
